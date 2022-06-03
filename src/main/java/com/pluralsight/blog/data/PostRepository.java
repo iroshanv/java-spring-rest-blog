@@ -12,6 +12,10 @@ import java.util.Optional;
 
 @Component
 public interface PostRepository extends JpaRepository<Post, Long> {
-    @RestResource(rel="contains-title", path = "containsTitle")
+    @RestResource(rel="contains-title",  path = "containsTitle")
     List<Post> findByTitleContaining(final String title);
+
+
+    @RestResource(rel = "author-post", path = "authorLastName")
+    List<Post> findByAuthor_Lastname(final String lastname);
 }
