@@ -17,7 +17,6 @@ import java.util.List;
 public class Post {
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "author_id")
     private Author author;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
