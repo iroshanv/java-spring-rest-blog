@@ -21,7 +21,8 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Version
+    private Long version;
     @NotNull
     @Size(min=4, max=100)
     private String title;
@@ -48,6 +49,14 @@ public class Post {
         this();
         this.title = title;
         this.body = body;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
     }
 
     public Long getId() {
